@@ -12,27 +12,30 @@ export interface District {
 export interface Sector {
     [cell: string]: string[];
 }
-export declare const getCountry: () => string;
-export declare const getProvinces: () => string[];
-export declare const getDistricts: () => string[];
-export declare const getDistrictsByProvince: (province: string) => string[];
-export declare const getSectors: () => string[];
-export declare const getSectorsByDistrict: (province: string, district: string) => string[];
-export declare const getCells: () => string[];
-export declare const getCellsBySector: (province: string, district: string, sector: string) => string[];
-export declare const getVillages: () => string[];
-export declare const getVillagesByCell: (province: string, district: string, sector: string, cell: string) => string[];
-export declare const getRandomLocation: () => {
-    province: string;
-    district: string;
-    sector: string;
-    cell: string;
-    village: string;
+declare const RwandaGeoStructure: {
+    getCountry: () => string;
+    getProvinces: () => string[];
+    getDistricts: () => string[];
+    getDistrictsByProvince: (province: string) => string[];
+    getSectors: () => string[];
+    getSectorsByDistrict: (province: string, district: string) => string[];
+    getCells: () => string[];
+    getCellsBySector: (province: string, district: string, sector: string) => string[];
+    getVillages: () => string[];
+    getVillagesByCell: (province: string, district: string, sector: string, cell: string) => string[];
+    getRandomLocation: () => {
+        province: string;
+        district: string;
+        sector: string;
+        cell: string;
+        village: string;
+    };
+    countLocations: () => {
+        provinces: number;
+        districts: number;
+        sectors: number;
+        cells: number;
+        villages: number;
+    };
 };
-export declare const countLocations: () => {
-    provinces: number;
-    districts: number;
-    sectors: number;
-    cells: number;
-    villages: number;
-};
+export default RwandaGeoStructure;

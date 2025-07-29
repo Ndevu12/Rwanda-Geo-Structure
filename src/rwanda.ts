@@ -27,33 +27,33 @@ const data: RwandaData = rwandaData;
 
 // functions
 
-export const getCountry = (): string => {
+const getCountry = (): string => {
   return 'Rwanda';
 };
 
-export const getProvinces = (): string[] => {
+const getProvinces = (): string[] => {
   return Object.keys(data.rwanda);
 };
 
-export const getDistricts = (): string[] => {
+const getDistricts = (): string[] => {
   return Object.values(data.rwanda).flatMap(province => Object.keys(province));
 };
 
-export const getDistrictsByProvince = (province: string): string[] => {
+const getDistrictsByProvince = (province: string): string[] => {
   return Object.keys(data.rwanda[province] || {});
 };
 
-export const getSectors = (): string[] => {
+const getSectors = (): string[] => {
   return Object.values(data.rwanda).flatMap(province =>
     Object.values(province).flatMap(district => Object.keys(district))
   );
 };
 
-export const getSectorsByDistrict = (province: string, district: string): string[] => {
+const getSectorsByDistrict = (province: string, district: string): string[] => {
   return Object.keys(data.rwanda[province]?.[district] || {});
 };
 
-export const getCells = (): string[] => {
+const getCells = (): string[] => {
   return Object.values(data.rwanda).flatMap(province =>
     Object.values(province).flatMap(district =>
       Object.values(district).flatMap(sector => Object.keys(sector))
@@ -61,11 +61,11 @@ export const getCells = (): string[] => {
   );
 };
 
-export const getCellsBySector = (province: string, district: string, sector: string): string[] => {
+const getCellsBySector = (province: string, district: string, sector: string): string[] => {
   return Object.keys(data.rwanda[province]?.[district]?.[sector] || {});
 };
 
-export const getVillages = (): string[] => {
+const getVillages = (): string[] => {
   return Object.values(data.rwanda).flatMap(province =>
     Object.values(province).flatMap(district =>
       Object.values(district).flatMap(sector =>
@@ -75,11 +75,11 @@ export const getVillages = (): string[] => {
   );
 };
 
-export const getVillagesByCell = (province: string, district: string, sector: string, cell: string): string[] => {
+const getVillagesByCell = (province: string, district: string, sector: string, cell: string): string[] => {
   return data.rwanda[province]?.[district]?.[sector]?.[cell] || [];
 };
 
-export const getRandomLocation = () => {
+const getRandomLocation = () => {
   const provinces = Object.keys(data.rwanda);
   const province = provinces[Math.floor(Math.random() * provinces.length)];
 
@@ -104,7 +104,7 @@ export const getRandomLocation = () => {
   };
 };
 
-export const countLocations = () => {
+const countLocations = () => {
   const provinces = Object.keys(data.rwanda).length;
 
   let districts = 0;
@@ -127,3 +127,20 @@ export const countLocations = () => {
 
   return { provinces, districts, sectors, cells, villages };
 };
+
+const RwandaGeoStructure = {
+  getCountry,
+  getProvinces,
+  getDistricts,
+  getDistrictsByProvince,
+  getSectors,
+  getSectorsByDistrict,
+  getCells,
+  getCellsBySector,
+  getVillages,
+  getVillagesByCell,
+  getRandomLocation,
+  countLocations,
+};
+
+export default RwandaGeoStructure;

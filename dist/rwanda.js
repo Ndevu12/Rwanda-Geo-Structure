@@ -3,39 +3,39 @@ import rwandaData from '../rwanda.json';
 // data import
 var data = rwandaData;
 // functions
-export var getCountry = function () {
+var getCountry = function () {
     return 'Rwanda';
 };
-export var getProvinces = function () {
+var getProvinces = function () {
     return Object.keys(data.rwanda);
 };
-export var getDistricts = function () {
+var getDistricts = function () {
     return Object.values(data.rwanda).flatMap(function (province) { return Object.keys(province); });
 };
-export var getDistrictsByProvince = function (province) {
+var getDistrictsByProvince = function (province) {
     return Object.keys(data.rwanda[province] || {});
 };
-export var getSectors = function () {
+var getSectors = function () {
     return Object.values(data.rwanda).flatMap(function (province) {
         return Object.values(province).flatMap(function (district) { return Object.keys(district); });
     });
 };
-export var getSectorsByDistrict = function (province, district) {
+var getSectorsByDistrict = function (province, district) {
     var _a;
     return Object.keys(((_a = data.rwanda[province]) === null || _a === void 0 ? void 0 : _a[district]) || {});
 };
-export var getCells = function () {
+var getCells = function () {
     return Object.values(data.rwanda).flatMap(function (province) {
         return Object.values(province).flatMap(function (district) {
             return Object.values(district).flatMap(function (sector) { return Object.keys(sector); });
         });
     });
 };
-export var getCellsBySector = function (province, district, sector) {
+var getCellsBySector = function (province, district, sector) {
     var _a, _b;
     return Object.keys(((_b = (_a = data.rwanda[province]) === null || _a === void 0 ? void 0 : _a[district]) === null || _b === void 0 ? void 0 : _b[sector]) || {});
 };
-export var getVillages = function () {
+var getVillages = function () {
     return Object.values(data.rwanda).flatMap(function (province) {
         return Object.values(province).flatMap(function (district) {
             return Object.values(district).flatMap(function (sector) {
@@ -44,11 +44,11 @@ export var getVillages = function () {
         });
     });
 };
-export var getVillagesByCell = function (province, district, sector, cell) {
+var getVillagesByCell = function (province, district, sector, cell) {
     var _a, _b, _c;
     return ((_c = (_b = (_a = data.rwanda[province]) === null || _a === void 0 ? void 0 : _a[district]) === null || _b === void 0 ? void 0 : _b[sector]) === null || _c === void 0 ? void 0 : _c[cell]) || [];
 };
-export var getRandomLocation = function () {
+var getRandomLocation = function () {
     var provinces = Object.keys(data.rwanda);
     var province = provinces[Math.floor(Math.random() * provinces.length)];
     var districts = Object.keys(data.rwanda[province]);
@@ -67,7 +67,7 @@ export var getRandomLocation = function () {
         village: village
     };
 };
-export var countLocations = function () {
+var countLocations = function () {
     var provinces = Object.keys(data.rwanda).length;
     var districts = 0;
     var sectors = 0;
@@ -87,3 +87,18 @@ export var countLocations = function () {
     });
     return { provinces: provinces, districts: districts, sectors: sectors, cells: cells, villages: villages };
 };
+var RwandaGeoStructure = {
+    getCountry: getCountry,
+    getProvinces: getProvinces,
+    getDistricts: getDistricts,
+    getDistrictsByProvince: getDistrictsByProvince,
+    getSectors: getSectors,
+    getSectorsByDistrict: getSectorsByDistrict,
+    getCells: getCells,
+    getCellsBySector: getCellsBySector,
+    getVillages: getVillages,
+    getVillagesByCell: getVillagesByCell,
+    getRandomLocation: getRandomLocation,
+    countLocations: countLocations,
+};
+export default RwandaGeoStructure;
