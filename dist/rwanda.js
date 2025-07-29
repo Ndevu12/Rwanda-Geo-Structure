@@ -1,55 +1,41 @@
-"use strict";
 // file location: src/data/Rwanda.ts
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.countLocations = exports.getRandomLocation = exports.getVillagesByCell = exports.getVillages = exports.getCellsBySector = exports.getCells = exports.getSectorsByDistrict = exports.getSectors = exports.getDistrictsByProvince = exports.getDistricts = exports.getProvinces = exports.getCountry = void 0;
-var Rwanda_json_1 = __importDefault(require("../Rwanda.json"));
+import rwandaData from '../rwanda.json';
 // data import
-var data = Rwanda_json_1.default;
+var data = rwandaData;
 // functions
-var getCountry = function () {
+export var getCountry = function () {
     return 'Rwanda';
 };
-exports.getCountry = getCountry;
-var getProvinces = function () {
+export var getProvinces = function () {
     return Object.keys(data.rwanda);
 };
-exports.getProvinces = getProvinces;
-var getDistricts = function () {
+export var getDistricts = function () {
     return Object.values(data.rwanda).flatMap(function (province) { return Object.keys(province); });
 };
-exports.getDistricts = getDistricts;
-var getDistrictsByProvince = function (province) {
+export var getDistrictsByProvince = function (province) {
     return Object.keys(data.rwanda[province] || {});
 };
-exports.getDistrictsByProvince = getDistrictsByProvince;
-var getSectors = function () {
+export var getSectors = function () {
     return Object.values(data.rwanda).flatMap(function (province) {
         return Object.values(province).flatMap(function (district) { return Object.keys(district); });
     });
 };
-exports.getSectors = getSectors;
-var getSectorsByDistrict = function (province, district) {
+export var getSectorsByDistrict = function (province, district) {
     var _a;
     return Object.keys(((_a = data.rwanda[province]) === null || _a === void 0 ? void 0 : _a[district]) || {});
 };
-exports.getSectorsByDistrict = getSectorsByDistrict;
-var getCells = function () {
+export var getCells = function () {
     return Object.values(data.rwanda).flatMap(function (province) {
         return Object.values(province).flatMap(function (district) {
             return Object.values(district).flatMap(function (sector) { return Object.keys(sector); });
         });
     });
 };
-exports.getCells = getCells;
-var getCellsBySector = function (province, district, sector) {
+export var getCellsBySector = function (province, district, sector) {
     var _a, _b;
     return Object.keys(((_b = (_a = data.rwanda[province]) === null || _a === void 0 ? void 0 : _a[district]) === null || _b === void 0 ? void 0 : _b[sector]) || {});
 };
-exports.getCellsBySector = getCellsBySector;
-var getVillages = function () {
+export var getVillages = function () {
     return Object.values(data.rwanda).flatMap(function (province) {
         return Object.values(province).flatMap(function (district) {
             return Object.values(district).flatMap(function (sector) {
@@ -58,13 +44,11 @@ var getVillages = function () {
         });
     });
 };
-exports.getVillages = getVillages;
-var getVillagesByCell = function (province, district, sector, cell) {
+export var getVillagesByCell = function (province, district, sector, cell) {
     var _a, _b, _c;
     return ((_c = (_b = (_a = data.rwanda[province]) === null || _a === void 0 ? void 0 : _a[district]) === null || _b === void 0 ? void 0 : _b[sector]) === null || _c === void 0 ? void 0 : _c[cell]) || [];
 };
-exports.getVillagesByCell = getVillagesByCell;
-var getRandomLocation = function () {
+export var getRandomLocation = function () {
     var provinces = Object.keys(data.rwanda);
     var province = provinces[Math.floor(Math.random() * provinces.length)];
     var districts = Object.keys(data.rwanda[province]);
@@ -83,8 +67,7 @@ var getRandomLocation = function () {
         village: village
     };
 };
-exports.getRandomLocation = getRandomLocation;
-var countLocations = function () {
+export var countLocations = function () {
     var provinces = Object.keys(data.rwanda).length;
     var districts = 0;
     var sectors = 0;
@@ -104,4 +87,3 @@ var countLocations = function () {
     });
     return { provinces: provinces, districts: districts, sectors: sectors, cells: cells, villages: villages };
 };
-exports.countLocations = countLocations;
