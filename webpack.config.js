@@ -21,6 +21,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     library: 'RwandaGeoStructure',
     libraryTarget: 'umd',
+    libraryExport: 'default',
     umdNamedDefine: true,
   },
 };
