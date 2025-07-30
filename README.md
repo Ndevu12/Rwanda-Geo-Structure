@@ -1,12 +1,18 @@
 # Rwanda Geo Structure
 
-[![npm version](https://badge.fury.io/js/rwanda-geo-structure.svg)](https://badge.fury.io/js/rwanda-geo-structure)
+<!-- Badges -->
+
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/derrick-nuby/Rwanda-Geo-Structure)
+[![View on npm](https://img.shields.io/badge/npm-Package-red?logo=npm)](https://www.npmjs.com/package/rwanda-geo-structure)
+
+[![npm version](https://img.shields.io/npm/v/rwanda-geo-structure?logo=npm)](https://www.npmjs.com/package/rwanda-geo-structure)
+[![npm downloads](https://img.shields.io/npm/dt/rwanda-geo-structure?logo=npm)](https://www.npmjs.com/package/rwanda-geo-structure)
+[![GitHub stars](https://img.shields.io/github/stars/derrick-nuby/Rwanda-Geo-Structure?logo=github)](https://github.com/derrick-nuby/Rwanda-Geo-Structure/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/derrick-nuby/Rwanda-Geo-Structure?logo=github)](https://github.com/derrick-nuby/Rwanda-Geo-Structure/issues)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![npm downloads](https://img.shields.io/npm/dm/rwanda-geo-structure.svg)](https://www.npmjs.com/package/rwanda-geo-structure)
-[![GitHub issues](https://img.shields.io/github/issues/Derrick-Nuby/rwanda-geo-structure.svg)](https://github.com/Derrick-Nuby/rwanda-geo-structure/issues)
-[![GitHub stars](https://img.shields.io/github/stars/Derrick-Nuby/rwanda-geo-structure.svg)](https://github.com/Derrick-Nuby/rwanda-geo-structure/stargazers)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Total badges](https://img.shields.io/badge/badges-9-blue)](https://github.com/derrick-nuby/Rwanda-Geo-Structure)
 
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://derrick.rw/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/derrick-nuby/)

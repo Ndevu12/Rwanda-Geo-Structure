@@ -8,9 +8,28 @@
   "scripts": {
     "build": "npx tsc --declaration --outDir dist/ && webpack"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "rwanda",
+    "geography",
+    "administrative-divisions",
+    "provinces",
+    "districts",
+    "sectors",
+    "cells",
+    "villages",
+    "typescript",
+    "coordinates"
+  ],
+  "author": "Derrick NUBY IRADUKUNDA <me@derricknuby.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/derrick-nuby/Rwanda-Geo-Structure.git"
+  },
+  "bugs": {
+    "url": "https://github.com/derrick-nuby/Rwanda-Geo-Structure/issues"
+  },
+  "homepage": "https://derrick-nuby.github.io/Rwanda-Geo-Structure/",
   "devDependencies": {
     "ts-loader": "^9.5.2",
     "typescript": "^5.8.3",
