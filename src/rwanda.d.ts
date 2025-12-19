@@ -12,6 +12,18 @@ export interface District {
 export interface Sector {
     [cell: string]: string[];
 }
+export interface SearchEntry {
+    id: number;
+    level: number;
+    location: {
+        province?: string;
+        district?: string;
+        sector?: string;
+        cell?: string;
+        village?: string;
+    };
+}
+export declare const search: (query: string) => SearchEntry[];
 export declare const getCountry: () => string;
 export declare const getProvinces: () => string[];
 export declare const getDistricts: () => string[];
