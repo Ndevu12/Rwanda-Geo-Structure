@@ -6,13 +6,23 @@ interface TrieNode {
 }
 
 export default class SearchEngine {
+  private clamp: { active: boolean; max: number } = { active: true, max: 50 };
   private entries: SearchEntry[] = [];
   private root: TrieNode = {
     children: new Map(),
     ids: []
   };
-
-  constructor(data: RwandaData) {
+  /**
+    * Initializes the SearchEngine with geographic administrative data.
+    *
+    * @param {RwandaData} data - The raw RwandaData structure used to index locations.
+    * @param {Object} [clamp] - Optional configuration to cap search results for performance.
+    * @returns {SearchEngine} A new SearchEngine instance.
+    *
+    * _Note: It is recommended to keep clamping enabled in client-side applications to ensure 
+    * optimal UI responsiveness and prevent excessive memory usage._
+    */
+  constructor(data: RwandaData, clamp?: { active: boolean; max: number }) {
     Object.entries(data.rwanda).forEach(([province, provinces]) => {
       this.addEntry({ level: 5, province });
       Object.entries(provinces).forEach(([district, districts]) => {
@@ -37,6 +47,7 @@ export default class SearchEngine {
     });
 
     this.optimize();
+    if (clamp) this.clamp = clamp;
   }
 
   private addEntry(location: any) {
@@ -154,6 +165,8 @@ export default class SearchEngine {
       results = results.concat(this.collectAllIds(child));
     }
 
-    return results;
+    return (this.clamp.active
+      ? results.slice(0, this.clamp.max)
+      : results);
   }
 }

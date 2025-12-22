@@ -1,6 +1,17 @@
 var SearchEngine = /** @class */ (function () {
-    function SearchEngine(data) {
+    /**
+      * Initializes the SearchEngine with geographic administrative data.
+      *
+      * @param {RwandaData} data - The raw RwandaData structure used to index locations.
+      * @param {Object} [clamp] - Optional configuration to cap search results for performance.
+      * @returns {SearchEngine} A new SearchEngine instance.
+      *
+      * _Note: It is recommended to keep clamping enabled in client-side applications to ensure
+      * optimal UI responsiveness and prevent excessive memory usage._
+      */
+    function SearchEngine(data, clamp) {
         var _this = this;
+        this.clamp = { active: true, max: 50 };
         this.entries = [];
         this.root = {
             children: new Map(),
@@ -33,6 +44,8 @@ var SearchEngine = /** @class */ (function () {
             });
         });
         this.optimize();
+        if (clamp)
+            this.clamp = clamp;
     }
     SearchEngine.prototype.addEntry = function (location) {
         var _this = this;
@@ -142,7 +155,9 @@ var SearchEngine = /** @class */ (function () {
             var child = _a[_i];
             results = results.concat(this.collectAllIds(child));
         }
-        return results;
+        return (this.clamp.active
+            ? results.slice(0, this.clamp.max)
+            : results);
     };
     return SearchEngine;
 }());
