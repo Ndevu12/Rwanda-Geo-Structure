@@ -3,6 +3,12 @@ node_modules/
 examples/
 coverage/
 
+# TypeScript build artifacts in src (keep dist/ tracked)
+src/**/*.d.ts
+src/**/*.js
+!src/index.ts
+!src/rwanda.ts
+
 # Drafts (singular and plural forms)
 draft/
 drafts/
