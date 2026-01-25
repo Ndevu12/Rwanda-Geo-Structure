@@ -1,6 +1,7 @@
 node_modules/
 .vscode/
 examples/
+coverage/
 dist/
 
 # Drafts (singular and plural forms)

@@ -13,6 +13,8 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![Total badges](https://img.shields.io/badge/badges-9-blue)](https://github.com/derrick-nuby/Rwanda-Geo-Structure)
+[![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)](https://github.com/derrick-nuby/Rwanda-Geo-Structure)
+[![Tests](https://img.shields.io/badge/tests-101%20passed-brightgreen.svg)](https://github.com/derrick-nuby/Rwanda-Geo-Structure)
 
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://derrick.rw/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/derrick-nuby/)
