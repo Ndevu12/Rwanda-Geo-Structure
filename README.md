@@ -13,8 +13,8 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![Total badges](https://img.shields.io/badge/badges-9-blue)](https://github.com/derrick-nuby/Rwanda-Geo-Structure)
-[![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)](https://github.com/derrick-nuby/Rwanda-Geo-Structure)
-[![Tests](https://img.shields.io/badge/tests-101%20passed-brightgreen.svg)](https://github.com/derrick-nuby/Rwanda-Geo-Structure)
+[![Coverage](https://img.shields.io/badge/coverage-98.4%25-brightgreen.svg)](https://github.com/derrick-nuby/Rwanda-Geo-Structure)
+[![Tests](https://img.shields.io/badge/tests-165%20passed-brightgreen.svg)](https://github.com/derrick-nuby/Rwanda-Geo-Structure)
 
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://derrick.rw/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/derrick-nuby/)
@@ -49,7 +49,17 @@ yarn add rwanda-geo-structure
 Import the functions you need:
 
 ```javascript
-import { getProvinces, getDistrictsByProvince } from "rwanda-geo-structure";
+import { getProvinces, getDistrictsByProvince, search } from "rwanda-geo-structure";
+
+// Get all provinces
+const provinces = getProvinces();
+
+// Search for locations (NEW!)
+const results = search('Kigali');
+// Returns array of SearchEntry objects with province, district, sector, cell, and village data
+
+// Multi-word search (finds locations matching ALL words)
+const specific = search('Kigali Gasabo');
 ```
 
 ## Documentation
@@ -72,6 +82,7 @@ Here's a summary of the available functions in the rwanda-geo-structure package:
 - [getCellsBySector(province, district, sector)](https://derrick-nuby.github.io/Rwanda-Geo-Structure/#getcellsbysector): Retrieves all cells within a specified sector.
 - [getVillages()](https://derrick-nuby.github.io/Rwanda-Geo-Structure/#getvillages): Retrieves all villages in Rwanda.
 - [getVillagesByCell(province, district, sector, cell)](https://derrick-nuby.github.io/Rwanda-Geo-Structure/#getvillagesbycell): Retrieves all villages within a specified cell.
+- [search(query)](https://derrick-nuby.github.io/Rwanda-Geo-Structure/#search): **NEW!** Searches across all administrative levels with multi-word, case-insensitive, and diacritic-insensitive matching.
 - [getRandomLocation()](https://derrick-nuby.github.io/Rwanda-Geo-Structure/#getrandomlocation): Generates a random location in Rwanda.
 - [countLocations()](https://derrick-nuby.github.io/Rwanda-Geo-Structure/#countlocations): Counts the number of administrative divisions at each level in Rwanda.
 

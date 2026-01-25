@@ -1,8 +1,13 @@
 // file location: src/data/Rwanda.ts
 import rwandaData from '../rwanda.json';
+import SearchEngine from './search';
 // data import
 var data = rwandaData;
+var engine = new SearchEngine(data);
 // functions
+export var search = function (query) {
+    return engine.search(query);
+};
 export var getCountry = function () {
     return 'Rwanda';
 };

@@ -1,6 +1,7 @@
 // file location: src/data/Rwanda.ts
 
 import rwandaData from '../rwanda.json';
+import SearchEngine from './search';
 
 // types
 
@@ -22,10 +23,27 @@ export interface Sector {
   [cell: string]: string[];
 }
 
+export interface SearchEntry {
+  id: number,
+  level: number
+  location: {
+    province?: string,
+    district?: string,
+    sector?: string,
+    cell?: string,
+    village?: string
+  }
+}
+
 // data import
 const data: RwandaData = rwandaData;
+const engine: SearchEngine = new SearchEngine(data);
 
 // functions
+
+export const search = (query: string): SearchEntry[] => {
+  return engine.search(query);
+};
 
 export const getCountry = (): string => {
   return 'Rwanda';
