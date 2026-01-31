@@ -1,0 +1,70 @@
+# Development files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Test files
+src/__tests__/
+dist/src/__tests__/
+coverage/
+*.test.ts
+*.test.js
+*.test.d.ts
+vitest.config.mts
+
+# Build configuration
+tsconfig.json
+webpack.config.js
+
+# Git and GitHub
+.git/
+.gitignore
+.github/
+
+# Documentation (hosted separately on GitHub Pages)
+index.html
+docs/
+
+# CI/CD and development
+.travis.yml
+.gitlab-ci.yml
+*.draft
+*.drafts
+draft/
+drafts/
+
+# Environment and config
+.env
+.env.*
+.npmrc
+
+# Temporary and cache
+node_modules/
+.npm/
+*.log
+npm-debug.log*
+.DS_Store
+
+# AI and development notes
+.claude/
+.junie/
+.qwen/
+CLAUDE.md
+QWEN.md
+GEMINI.md
+copilot-instructions.md
+AGENTS.md
+
+# Examples (if not needed in package)
+examples/
+
+# Keep only essential files:
+# - package.json (required)
+# - README.md (required)
+# - LICENSE.md (required)
+# - CHANGELOG.md (good practice)
+# - dist/ (built files - required)
+# - src/ (source for TypeScript users - required)
+# - rwanda.json (data - required)
